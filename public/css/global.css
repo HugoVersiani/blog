@@ -154,4 +154,27 @@ li {
     #nav.active #hamb::before {
         transform: rotate(45deg);
     }
+
 }
+
+#footer {
+    height: 40px;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    bottom: 40px;
+    font-size: 0.87rem;
+}
+
+.div-footer {
+    margin: 0 auto
+}
+
+.social-icon {
+    width: 20px;
+    opacity: 0.8;
+    padding: 5px;
+}
+
