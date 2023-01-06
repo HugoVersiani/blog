@@ -2,8 +2,7 @@
 
 @section('content')
     <section id="main-div" class="bg-light">
-        <h1 id="latest" >Mais recentes</h1>
-        <span>O diário de bordo da jornada de um desenvolvedor web:</span>
+        <h1 id="latest" >Escritos</h1>
         <div id="main-section">
             <div class="line"></div>
             <section class="section-preview d-flex">

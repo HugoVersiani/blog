@@ -10,7 +10,7 @@
                 </button>
                 <ul role="menu" id="nav-ul">
                     <li>
-                    <a>Blog</a>
+                    <a href="{{url('/blog')}}">Blog</a>
                     </li> 
                     <li>
                     <a>Tags</a>
