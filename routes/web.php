@@ -13,11 +13,11 @@ use App\Http\Controllers\PostsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [PagesController::class, 'index']);
+Auth::routes();
+Route::resource('/blog', PostsController::class);
 
-Route::get('/blog', [PostsController::class, 'index']);
-
+Route::get('/home',  [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::resources('/blog', PostsController::class);
 

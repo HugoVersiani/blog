@@ -19,10 +19,20 @@
                     <a>Portifólio</a>
                     </li> 
                     <li>
+                      @if(Auth::check())
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                    {{ csrf_field() }}
+                                </form>
+                            </a>
+                        </li>
+                    @endif
                     <a><i class="fas fa-solid fa-moon fa-1x" aria-hidden="true"></i></a>
                     </li> 
                 </ul>
             </nav>
         </div>
     </div>
+    
 </header>

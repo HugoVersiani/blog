@@ -2,28 +2,41 @@
 
 @section('content')
     <section id="main-div" class="bg-light">
-        <h1 id="latest" >Escritos</h1>
-        <div id="main-section">
-            <div class="line"></div>
-            <section class="section-preview d-flex">
-                <div class="left-content">
-                    <div id="img-content">
-                        <img  width="100%" src="{{asset('img/textura.jpg')}}">
-                    </div>
-                    <span class="date-span">
-                        01 de Abril de 2023
-                    </span>
+        <div class='space-between d-flex'>
+            <h1 id="latest" >Escritos</h1>
+            @if(Auth::check())
+                <div class="borda">
+                    <a href="/blog/create" class="write-btn">
+                    Escrever
+                    </a>
                 </div>
-                <div class="right-content">
-                    <span class="tag"> POO </span>
-                    <span class="tag"> PHP </span>
-                    <h1>O que a abstração abstrai?</h1>
-        
-                    <p>
-                        Ação de abstrair, de analisar isoladamente um aspecto, contido num todo, sem ter em consideração sua relação com a realidade.
-                    </p>
-                </div>     
-            </section>
+                @endif
         </div>
+        <div id="main-section">
+            @foreach ($posts as $post)
+                <div class="line"></div>
+                <section class="section-preview d-flex">
+                    <div class="left-content">
+                     
+                        {{-- <span class="date-span">
+                            Por {{$post->user->name}}, {{date('j M Y', strtotime($post->updated_at) )}}
+                        </span> --}}
+                    </div>
+                    <div class="right-content">
+                        <span class="tag"> POO </span>
+                        <span class="tag"> PHP </span>
+                        <h1>{{$post->title}}</h1>
+            
+                        <p>
+                           {{$post->description}}
+                        </p>
+                        <a class="more" href="/blog/{{$post->slug}}" >
+                            Ler mais...
+                        </a>
+                    </div>     
+                </section>
+            @endforeach
+        </div>
+        <div class="line"></div>
     </section>
 @endsection
