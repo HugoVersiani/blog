@@ -8,3 +8,8 @@ function toggleMenu(event) {
 }
 btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
+
+
+function destroyAlert() {
+    document.getElementById("alert").style.display="none";
+}

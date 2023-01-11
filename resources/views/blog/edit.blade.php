@@ -11,17 +11,18 @@
 @endif
     <div>
         <form
-            action="/blog"
+            action="/blog/{{ $post->slug }}"
             method="POST"
             enctype="multipart/form-data"
             class="d-flex column" 
             >
             @csrf
+            @method('PUT')
             
             <input
                 type="text"
                 name="title"
-                placeholder="Título..."
+                value="{{$post->title}}"
                 id="title-input"
                 >
             <textarea
@@ -29,19 +30,26 @@
                 placeholder="Texto..."
                 id="textarea"
                 >
+            {{$post->description}}
             </textarea>
             <div class="d-flex space-between div-submit">
                 <div class="">
                     <label class="">
-                        @component('blog._components._blacklink', ['text' => 'Imagem', 'route' => ''])
-                          <input type="file" name="image" class=" input-arruma"> 
-                        @endcomponent
+        
+                        <div class="borda-black">
+                            <a class="design-btn">
+                                <input 
+                                    type="file"
+                                    name="image"
+                                    class=" input-arruma"> Pegar imagem
+                            </a>
+                        </div>
                     </label>
                 </div>
                 <button    
                     type="submit"
-                    class="uppercase border-red">
-                    <a class="link-style-red">
+                    class="uppercase borda">
+                    <a class="write-btn">
                         Publicar
                     </a>
                 </button>

@@ -2,39 +2,27 @@
 
 @section('content')
     <section id="main-div" class="bg-light">
+        @if(session()->has('message_black'))
+            @component('blog._components._alert', ['class' => 'message_black'])
+                {{session()->get('message_black')}}
+            @endcomponent
+        @endif
+        @if(session()->has('message_red'))
+            @component('blog._components._alert', ['class' => 'message_red'])
+                {{session()->get('message_red')}}
+            @endcomponent
+        @endif
         <div class='space-between d-flex'>
             <h1 id="latest" >Escritos</h1>
             @if(Auth::check())
-                <div class="borda">
-                    <a href="/blog/create" class="write-btn">
-                    Escrever
-                    </a>
-                </div>
-                @endif
+               @component('blog._components._redlink', ['text' => 'escrever', 'route' => '/blog/create'])
+               @endcomponent
+            @endif
         </div>
         <div id="main-section">
-            @foreach ($posts as $post)
-                <div class="line"></div>
-                <section class="section-preview d-flex">
-                    <div class="left-content">
-                     
-                        {{-- <span class="date-span">
-                            Por {{$post->user->name}}, {{date('j M Y', strtotime($post->updated_at) )}}
-                        </span> --}}
-                    </div>
-                    <div class="right-content">
-                        <span class="tag"> POO </span>
-                        <span class="tag"> PHP </span>
-                        <h1>{{$post->title}}</h1>
-            
-                        <p>
-                           {{$post->description}}
-                        </p>
-                        <a class="more" href="/blog/{{$post->slug}}" >
-                            Ler mais...
-                        </a>
-                    </div>     
-                </section>
+            @foreach ($posts as $key => $post)
+               @component('blog._components._article', ['post' => $post])
+                @endcomponent
             @endforeach
         </div>
         <div class="line"></div>
