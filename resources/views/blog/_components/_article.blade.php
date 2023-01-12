@@ -7,16 +7,18 @@
             </span> --}}
         </div>
         <div class="right-content">
-            <div>
+            <div class="text-description">
                 <span class="tag"> POO </span>
                 <span class="tag"> PHP </span>
-                <h1>{{$post->title}}</h1>
+                <a  href="/blog/{{$post->slug}}"><h1>{{$post->title}}</h1></a>
                 <p>
-                    {{$post->description}}
-                </p>
-                <a class="more" href="/blog/{{$post->slug}}" >
+                  
+                    {{substr(strip_tags($post->description), 0, 80)}}
+                    <a class="more" href="/blog/{{$post->slug}}" >
                     Ler mais...
-                </a>
+                    </a>
+                </p>
+    
             </div>
             @if(Auth::check() && Auth::user()->id == $post->user_id)
                 <div class="d-flex edit-delete-div" >

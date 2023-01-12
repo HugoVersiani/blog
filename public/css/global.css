@@ -129,6 +129,9 @@ li {
     background-repeat:no-repeat; /* para não repetir o background */
 
 }
+
+
+
 .section-preview {
     min-height: 27vh;
     max-height: 27vh;
@@ -175,7 +178,7 @@ li {
 }
 
 #main-div-reading {
-    width: 40%;
+    width: 47%;
     margin: 0 auto;
 }
 
@@ -198,6 +201,11 @@ li {
 
 .input-arruma {
     display: none;
+}
+
+.integra-text p{
+    font-size: 1rem !important;
+    line-height: 25px !important;
 }
 /*Alert*/
 

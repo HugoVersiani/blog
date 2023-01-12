@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/global.css')}}">
          <title>Versiani</title>
+          <script src="//cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
 
     </head>
     <body>
@@ -17,6 +18,7 @@
     
     
         @include('layouts.footer')
+       
        
     </body>
     <script src="{{asset('js/global.js')}}" ></script>

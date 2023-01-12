@@ -28,7 +28,7 @@
             <textarea
                 name="description"
                 placeholder="Texto..."
-                id="textarea"
+                class="ckeditor"
                 >
             {{$post->description}}
             </textarea>

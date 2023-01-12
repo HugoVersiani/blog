@@ -27,7 +27,7 @@
             <textarea
                 name="description"
                 placeholder="Texto..."
-                id="textarea"
+                class="ckeditor"
                 >
             </textarea>
             <div class="d-flex space-between div-submit">

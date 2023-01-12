@@ -13,3 +13,12 @@ btnMobile.addEventListener('touchstart', toggleMenu);
 function destroyAlert() {
     document.getElementById("alert").style.display="none";
 }
+
+ClassicEditor
+.create( document.querySelector( '.ckeditor' ) )
+.then( editor => {
+        console.log( editor );
+} )
+.catch( error => {
+        console.error( error );
+} );
