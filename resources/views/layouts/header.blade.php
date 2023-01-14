@@ -13,7 +13,7 @@
                     <a href="{{url('/blog')}}">Blog</a>
                     </li> 
                     <li>
-                    <a>Tags</a>
+                    <a href="{{url('/tags')}}">Tags</a>
                     </li> 
                     <li>
                     <a>Portifólio</a>

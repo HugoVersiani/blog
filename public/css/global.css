@@ -93,7 +93,7 @@ li {
 }
 
 #footer {
-    height: 40px;
+    max-height: 10vh;
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -114,6 +114,7 @@ li {
 }
 
 #main-div {
+    min-height: 70vh;
     width: 50%;
     margin: 0 auto;
 }
@@ -130,7 +131,9 @@ li {
 
 }
 
-
+.title_div {
+   align-items: center;
+}
 
 .section-preview {
     min-height: 27vh;
@@ -151,7 +154,7 @@ li {
 .line {
     height: 1px;
     width: 100%;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(240, 240, 240);
 }
 
 
@@ -170,6 +173,45 @@ li {
     margin-right: 5px;
     cursor: pointer;
 }
+.tag_on_page {
+    font-size: 1.1rem;
+    color: var(--light-font-color-01);
+    padding: 10px;
+    border: 1px solid var(--light-font-color-01);
+    margin: 7px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.tag_on_page:hover {
+    color: var(--visual-id-colort);
+    border: 1px solid var(--visual-id-colort);
+    transition: all 0.2s ease 0s;
+   
+}
+.tag_on_page a:hover {
+    opacity: 1;
+}
+.tag_on_page form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tag_delete {
+    color: var(--light-font-color-01);
+    border: 1px solid var(--light-font-color-01);
+    background-color: transparent;
+    margin-left: 7px;
+    padding: 0 3px;
+    cursor: pointer;
+
+}
+
+.tags-content {
+    margin-top: 20px;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
 
 #latest {
     font-size: 2.5rem;
@@ -178,13 +220,13 @@ li {
 }
 
 #main-div-reading {
+    min-height: 70vh;
     width: 47%;
     margin: 0 auto;
 }
 
 #main-div-reading h1 {
     font-size: 2.2rem;
-    margin: 20px 0 5px 0;
 }
 
 .right-content {
@@ -249,7 +291,7 @@ li {
     border: 1px solid var(--visual-id-colort);
     color: var(--light-bg-color);
     width: 100px;
-    height: 40px;
+    height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -347,6 +389,28 @@ li {
     color: var(--light-font-color-01);
     min-width: 100%;
     max-width: 100%;
+}
+#form-input {
+    align-items: center;
+    justify-content: center;
+
+}
+
+#form-input input {
+    height: 40px;
+    margin: 20px 0;
+    border: 1px solid var(--light-font-color-01);
+    outline: none;
+    font-size: 1.2rem ;
+    font-weight: lighter;
+    color: var(--light-font-color-01);
+    min-width: 60%;
+    max-width: 60%;
+    margin: 0 10px;
+}
+
+#form-input input:focus{
+    border: 1px solid var(--visual-id-colort);
 }
 
 #input-login {
